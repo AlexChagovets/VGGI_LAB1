@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PA#1</title>
+
+  <style>
+    body {
+      background-color: #EEEEEE;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+
+  <script src="./Utils/trackball-rotator.js"></script>
+  <script src="./Utils/m4.js"></script>
+  <script src="./shader.gpu"></script>
+  <script type="module" src="./main.js"></script>
+</head>
+
+<body onload="init()">
+
+  <h2>A Cube with "Trackball" Mouse Rotation</h2>
+
+  <p id="message">
+    Drag your mouse on the cube to rotate it.<br>
+    (On a touch screen, you can use your finger.)
+  </p>
+
+  <div id="ui" style="position:fixed; top:10px; right:10px; background:#111a; padding:10px; color:#fff; font:12px sans-serif; border-radius:8px;">
+    <div><label>a <input id="a" type="range" min="0" max="10" step="0.1" value="4"></label> <span id="aVal"></span></div>
+    <div><label>n <input id="n" type="range" min="0" max="2" step="0.01" value="0.5"></label> <span id="nVal"></span></div>
+    <div><label>m <input id="m" type="range" min="1" max="20" step="1" value="6"></label> <span id="mVal"></span></div>
+    <div><label>b <input id="b" type="range" min="1" max="10" step="0.1" value="6"></label> <span id="bVal"></span></div>
+    <div><label>phi <input id="phi" type="range" min="-3.14" max="3.14" step="0.01" value="0"></label> <span id="phiVal"></span></div>
+
+    <hr style="opacity:.2">
+
+    <div><label>Nu (samples u) <input id="Nu" type="range" min="16" max="256" step="1" value="120"></label> <span id="NuVal"></span></div>
+    <div><label>Nr (samples r) <input id="Nr" type="range" min="16" max="256" step="1" value="120"></label> <span id="NrVal"></span></div>
+    <div><label>U-lines (r fixed) <input id="rLines" type="range" min="4" max="80" step="1" value="40"></label> <span id="rLinesVal"></span></div>
+    <div><label>V-lines (u fixed) <input id="uLines" type="range" min="4" max="80" step="1" value="40"></label> <span id="uLinesVal"></span></div>
+
+    <hr style="opacity:.2">
+
+    <button id="shot">Screenshot</button>
+  </div>
+
+  <div id="canvas-holder">
+    <canvas width="600" height="600" id="webglcanvas" style="background-color:red"></canvas>
+  </div>
+
+</body>
+</html>
